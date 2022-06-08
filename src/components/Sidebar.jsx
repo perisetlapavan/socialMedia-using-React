@@ -2,7 +2,7 @@ import { AccountBox, Article, Group, Home, ModeNight, Person, Settings, Storefro
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from '@mui/material'
 import React from 'react'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     //   to make it responsive i used  xs and sm ansd p here is for padding effect 
     <Box
@@ -80,7 +80,9 @@ const Sidebar = () => {
             <ListItemIcon>
               <ModeNight/>
             </ListItemIcon>
-            <Switch/>
+            <Switch onChange={e=>{props.setMode(props.mode==="light"?"dark":"light");
+                                  props.setBgcolr(props.bgcolr==="white"?"black":"white");
+                                  props.setTextcolr(props.textcolr==="white"?"black":"white")}}/>
           </ListItemButton>
         </ListItem>
 

@@ -16,7 +16,7 @@ const UserBox = styled(Box)({
     gap: "10px",
     marginBottom: "20px"
 })
-const Add = () => {
+const Add = (props) => {
     const [open, setOpen] = useState(false);
     return (
         <>
@@ -31,7 +31,7 @@ const Add = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box width={400} height={280} bgcolor="white" p={3} borderRadius={5}>
+                <Box width={400} height={280} bgcolor={props.bgcolr} p={3} borderRadius={5}>
                     <Typography variant="h6" color="gray" textAlign="center">
                         Create Post
                     </Typography>
