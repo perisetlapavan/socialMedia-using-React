@@ -4,14 +4,14 @@ import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 
-const Post = () => {
+const Post = (props) => {
   return (
     <div>
         <Card sx={{margin:5}}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: "red" }} aria-label="recipe" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Nandamuri_Balakrishna.jpg/220px-Nandamuri_Balakrishna.jpg">
+            
           </Avatar>
         }
         action={
@@ -19,19 +19,18 @@ const Post = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Balayya Fans Association"
-        subheader="September 14, 2021"
+        title="BalaKrishna"
+        subheader={props.date}
       />
       <CardMedia
         component="img"
         height="20%"
-        image="https://assets.thehansindia.com/h-upload/2022/01/18/1195496-akhanda.webp"
+        image={props.src}
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-        Nandamuri Balakrishna and Pragya Jaiswal played the lead roles in the new Telugu film Akhanda. 
-        Boyapati Srinu is the film's director. The film is bankrolled by Dwaraka Creations
+        {props.info}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
